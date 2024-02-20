@@ -1,6 +1,6 @@
 #include <stdio.h>
 
 int main() {
-    printf("Ceci est une œuvre d'art,\n");
+    printf("This is a piece of art,\n");
     return 0;
 }
