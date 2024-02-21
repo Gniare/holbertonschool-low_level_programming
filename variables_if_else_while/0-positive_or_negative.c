@@ -6,20 +6,26 @@
  * main - Entry point
  * Return: Always 0 (Success)
  */
+
 int main(void)
 {
 	int n;
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-	 if (n > 0)
-{
-        printf("Le nombre %d is positif.\n", n);
- }
- else if (n == 0) {
-        printf("Le nombre is zéro.\n");
-    } else {
-        printf("Le nombre %d is négatif.\n", n);
-    } 
+
+	if (n > 0)
+	{
+		printf("%d is positive\n", n);
+	}
+	else if (n == 0)
+	{
+		printf("%d is zero\n", n);
+											}
+	else if (n < 0)
+	{
+		printf("%d is negative\n", n);
+	}
+
 	return (0);
 }
