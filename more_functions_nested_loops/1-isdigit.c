@@ -3,6 +3,7 @@
 /**
  * _isdigit -ichecks for a digit (0 through 9)
  * @c: int type digit
+ * Return: 1 if  @c is a digit, 0 if false
  */
 
 int _isdigit(int c)
