@@ -3,8 +3,6 @@
 /*
 *print_triangle - draws a triangle using #.
 *@size: size of the triangle
-Where size is the size of the triangle
-If size is 0 or less, the function should print only a new line
 */
 
 void print_triangle(int size)
