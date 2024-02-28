@@ -1,8 +1,9 @@
 #include "main.h"
 
-/*
-*print_triangle - draws a triangle using #.
+/**
+*print_triangle - draws a triangle using #
 *@size: size of the triangle
+*Return: Always 0.
 */
 
 void print_triangle(int size)
