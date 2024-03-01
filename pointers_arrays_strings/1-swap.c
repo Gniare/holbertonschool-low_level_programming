@@ -3,7 +3,7 @@
 
 /**
 *swap_int - he values of two integers
-*@a: b 
+*@a: b
 *@b: a
 *Return: void
 */
