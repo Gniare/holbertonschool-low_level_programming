@@ -7,13 +7,13 @@
 *@s: Print the current character
 *Return: void
 */
-#include <stdio.h>
 
-void _puts(char *str) {
+void _puts(char *str)
+{
 while (*str != '\0') 
 {
-putchar(*str);
+_putchar (*str);
 str++;
 }
-putchar('\n');
+_putchar ('\n');
 }
