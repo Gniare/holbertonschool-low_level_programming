@@ -1,20 +1,22 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
-*_strlen - returns the length of a string
-*@s: string
-*Return: length
+*_strncpy - Copy a string
+*@dest: string
+*@src: string
+*@n: number of chars to copy over
+*Return: `dest` edited string
 */
 
-int _strlen(char *s)
+char *_strncpy(char *dest, char *src, int n)
 {
-int len = 0;
+int i;
 
-for (; *s != '\0'; s++)
-{
-len++;
-}
+for (i = 0; i < n && src[i] != '\0'; i++)
+dest[i] = src[i];
 
-return (len);
+for (; n > i; i++)
+dest[i] = '\0';
+
+return (dest);
 }
