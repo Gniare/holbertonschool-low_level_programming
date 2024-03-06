@@ -1,29 +1,23 @@
 #include "main.h"
 #include <stdio.h>
+#include <string.h>
 
 /**
-*_strspn - The function is used to calculate the length of the initial segment of a string consisting of only the characters that are present in another specified string
-*@s:the number of bytes in the initial
-*Return: s
+*_strspn - gets the length of a prefix substring.
+*@s: pointer to the character string to parse
+*@accept: pointer to the charactere string containing
+*the character to search for
+*Return: Number of characters in the initial segment of s
+*which only accept characters
 */
-
 unsigned int _strspn(char *s, char *accept)
 {
-int i = 0;
-int j;
-int h = 0;
-while (s[i] != '\0')
+unsigned int count = 0;
+
+while (*s != '\0' && strchr(accept, *s) != NULL)
 {
-for (j = 0; accept[j] != '\0'; j++)
-{
-if (s[i] == accept[j])
-{
-h++;
-break;
+count++;
+s++;
 }
-if (accept[j + 1] == '\0' && s[i] != accept[i])
-return (h);
-i++;
-}
-return (h);
+return (count);
 }
