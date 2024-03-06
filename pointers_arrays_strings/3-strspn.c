@@ -22,7 +22,6 @@ if (s[i] == accept[j])
 h++;
 break;
 }
-
 if (accept[j + 1] == '\0' && s[i] != accept[i])
 return (h);
 }
