@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
-*is_prime - divise de maniÃ¨re rÃ©cursi, diviseur plus Ã©lev ©sauter nbre pai
+*is_prime - divise de maniÃ
 *@n: number to check if prime
 *@d: ivisor
-*Return: 1 if prime, 0 if not, or recursive function call
+*Return: 1 if prime, 0 if not
 */
 
 int is_prime(int n, int d)
