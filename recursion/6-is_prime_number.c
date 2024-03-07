@@ -2,8 +2,8 @@
 
 /**
 *is_prime - divise de maniÃ¨re rÃ©cursi, diviseur plus Ã©lev ©sauter nbre pai
-*@n:number to check if prime
-*@d:ivisor
+*@n: number to check if prime
+*@d: ivisor
 *Return: 1 if prime, 0 if not, or recursive function call
 */
 
@@ -18,7 +18,6 @@ if (n % d == 0)
 return (0);
 }
 return (is_prime(n, d + 1));
-
 }
 
 /**
