@@ -2,25 +2,28 @@
 #include <stdlib.h>
 
 /**
-*main - function to print multiplication result
+*main - entry point
 *@argc: number of arguments
-*@argv: arguments supplied
-*Return: always 1 if less than two arg var
+*@argv: arguments
+*Return: 0
 */
 
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
-int a = 0, b = 0;
+int n1;
+int n2;
+int result;
 
-if (argc > 2)
-{
-a = atoi(argv[1]);
-b = atoi(argv[2]);
-printf("%d\n", a * b);
-}
-else
+if (argc <= 2)
 {
 printf("Error\n");
+return (1);
 }
+
+n1 = atoi(argv[1]);
+n2 = atoi(argv[2]);
+result = n1 * n2;
+
+printf("%d\n", result);
 return (0);
 }
