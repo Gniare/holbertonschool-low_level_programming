@@ -2,11 +2,12 @@
 #include <stdlib.h>
 
 /**
- * main - function to print multiplication result
- * @argc: number of arguments
- * @argv: arguments supplied
- * Return: always 1 if less than two arg var supplied otherwise 0.
- */
+*main - function to print multiplication result
+*@argc: number of arguments
+*@argv: arguments supplied
+*Return: always 1 if less than two arg var supplied otherwise 0.
+*/
+
 int main(int argc, char **argv)
 
 {
