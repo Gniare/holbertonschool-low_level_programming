@@ -5,11 +5,10 @@
 *main - function to print multiplication result
 *@argc: number of arguments
 *@argv: arguments supplied
-*Return: always 1 if less than two arg var supplied otherwise 0.
+*Return: always 1 if less than two arg var
 */
 
 int main(int argc, char **argv)
-
 {
 int a = 0, b = 0;
 
