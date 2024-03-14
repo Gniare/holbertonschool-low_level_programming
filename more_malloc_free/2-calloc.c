@@ -3,10 +3,10 @@
 #include "main.h"
 
 /**
-*calloc - function allocates memory for an array
+*_calloc - function allocates memory for an array
 *@size: each of size
 *@nmemb: elements, each of size size
-*Return: null
+*Return: null or pointer
 */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
