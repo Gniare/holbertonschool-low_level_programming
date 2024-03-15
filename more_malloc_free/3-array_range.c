@@ -15,7 +15,7 @@ int *ptr;
 int i;
 int n = (max - min + 1);
 
-if (min > max) /* verifie si min > max si oui return NULL */
+if (min > max) /*verifie si min > max si oui return NULL*/
 {
 return (NULL);
 }
@@ -26,15 +26,15 @@ ptr = malloc(sizeof(int) * n);
 *n = diff entre max et min avce +1 pour inclure max
 */
 
-if (ptr == NULL) /* si allocation echoue renvoie NULL */
+if (ptr == NULL) /*si allocation echoue renvoie NULL*/
 {
 return (NULL);
 }
 
 for (i = 0; i < n; i++)
-/*initialise les valeurs du tableau avec entier de min a max */
+/*initialise les valeurs du tableau avec entier de min a max*/
 {
 ptr[i] = min++;
 }
-return (ptr); /* renvoie pointeur vers la tableau */
+return (ptr); /*renvoie pointeur vers la tableau*/
 }
