@@ -2,7 +2,7 @@
 #include "variadic_functions.h"
 
 /**
-*sum_them_all - retourne la somme d'un nombre variable d'entiers
+*sum_them_all - retourne la somme d'un nombre variable
 *@n: le nombre total d'entiers additionner
 *Return: la somme des entiers
 */
