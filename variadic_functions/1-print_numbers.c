@@ -1,34 +1,36 @@
-#include "variadic_functions.h"
-#include <stdarg.h>
+#include <stdarg.h> /* BibliothÃ¨que pour les fonctions va_* */
 #include <stdio.h>
-#include <stdlib.h>
+#include "variadic_functions.h"
 
 /**
-*print_numbers - a function that prints numbers, followed by a new line.
-*@separator: string to be printed between numbers
-*@n: number of integers passed to the function
-*
-*Return: no return
+*print_numbers - imprimer nombres
+*@separator: dÃ©limiteu a afficher entre les nombres
+*@n: nombre total d'arguments dans la liste
 */
 
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
-va_list valist;
-unsigned int i = 0;
+va_list valist; /* DÃ©claration de la liste d'arguments variables*/
+unsigned int i; /* DÃ©claration d'un compteur pour l'itÃ©ratio*/
 
+/* VÃ©rification si le nombre d'arguments est supÃ©rie a z */
 if (n > 0)
 {
-va_start(valist, n);
+va_start(valist, n); /* Initialisation de la liste d'arguments variables */
 
-while (i < n)
+/* Boucle pour parcourir la liste d'arguments et imprimer les nombres */
+for (i = 1; i <= n; i++)
 {
 printf("%d", va_arg(valist, int));
+/* Imprime l'entier suivant dans la liste */
 
-if (i != n - 1 && separator != NULL)
-printf("%s", separator);
-i++;
+/* VÃ©ri si sÃ©parateur n'est pas nul et si ce n'est pas le dernier Ã©l */
+if (i != n && separator != NULL)
+printf("%s", separator); /* Imprime le sÃ©parateur*/
 }
-va_end(valist);
+
+va_end(valist); /* LibÃ©rationmÃ©moire assocee Ãliste d'arguments variables*/
 }
-printf("\n");
+
+printf("\n"); /* Imprime une nouvelle ligne a la fin */
 }
