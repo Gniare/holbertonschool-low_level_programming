@@ -1,27 +1,25 @@
-#include "variadic_functions.h"
 #include <stdarg.h>
-#include <stdio.h>
+#include "variadic_functions.h"
 
 /**
-*sum_them_all - function that returns the sum of all its parameters.
-*@n: variadic inputs
-*
-*Return: result.
+*sum_them_all - retourne la somme d'un nombre variable d'entiers
+*@n: le nombre total d'entiers additionner
+*Return: la somme des entiers
 */
 
 int sum_them_all(const unsigned int n, ...)
-
 {
 va_list valist;
-unsigned int i, result = 0;
+unsigned int sum = 0, i;
 
+if (n == 0)
+return (0);
 va_start(valist, n);
 
 for (i = 0; i < n; i++)
-{
-result += va_arg(valist, const unsigned int);
-}
+sum += va_arg(valist, int);
+
 va_end(valist);
 
-return (result);
+return (sum);
 }
