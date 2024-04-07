@@ -8,6 +8,7 @@
  * @str: String
  * Return: Adress of new element or NULL
  */
+
 list_t *add_node_end(list_t **head, const char *str)
 {
 	list_t *new_node;
@@ -45,11 +46,6 @@ list_t *add_node_end(list_t **head, const char *str)
 	return (new_node);
 }
 
-/**
- * _strlen - Return length of a string
- * @s: (int) text
- * Return: (int) length
- */
 int _strlen(char *s)
 {
 	int i;
