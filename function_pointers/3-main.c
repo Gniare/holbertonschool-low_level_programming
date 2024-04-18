@@ -1,33 +1,31 @@
-#include "3-calc.h"
+#include <stdlib.h>
 #include <stdio.h>
+#include "3-calc.h"
+
 /**
- * main - check the code
- * @argc: Argument count
- * @argv: Argument vector
- * Return: Always 0.
+ * main - function
+ * @argc: int
+ * @argv: char ptr ptr
+ *
+ * Return: int
  */
-int main(int argc, char *argv[])
+int	main(int argc, char **argv)
 {
-	int i, j;
-	int (*opera)(int, int);
-	if (argc != 4)
-	{
-		printf("Error\n");
-		exit(98);
-	}
-	opera = get_op_func(argv[2]);
-	i = atoi(argv[1]);
-	j = atoi(argv[3]);
-	if ((opera == NULL) || (argv[2][1]))
-	{
-		printf("Error\n");
-		exit(99);
-	}
-	if ((argv[2][0] == '%' || argv[2][0] == '/') && atoi(argv[3]) == 0)
-	{
-		printf("Error\n");
-		exit(100);
-	}
-	printf("%d\n", opera(i, j));
+	int	a;
+	char	*o;
+	int	b;
+	int	(*f)(int, int);
+	int	r;
+
+	if (argc < 4)
+		return (0 * printf("Error\n") + 98);
+	a = atoi(argv[1]);
+	o = argv[2];
+	b = atoi(argv[3]);
+	f = get_op_func(o);
+	if (f == 0 || o[1] != '\0')
+		return (0 * printf("Error\n") + 99);
+	r = f(a, b);
+	printf("%d\n", r);
 	return (0);
 }
