@@ -1,31 +1,62 @@
-#include "main.h"
-#include <unistd.h>
 #include <fcntl.h>
+#include "main.h"
+#include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
+#define BUFSIZE 1024
 
 /**
- * read_textfile - reads a text file and prints it to standard output
- * @filename: relative or absolute path of the file
- * @letters: number of letters to read and print
- *
- * Return: total number of chars printed
+ * read_textfile - reads a text file and prints it to the POSIX standard output
+ * @filename: file to read from
+ * @letters: size to read
+ * Return: file can not opened or read, return 0, filename NULL return 0
  */
+
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd;
-	int readed;
+	ssize_t n_read, n_written;
+	char *buffer;
 
-	char *buff = malloc(sizeof(char) * letters);
-
-	if (buff == NULL || filename == NULL)
+	if (filename == NULL)
 		return (0);
-	fd = open(filename, O_RDONLY, 0600);
 
+	/* Open */
+	fd = open(filename, O_RDONLY);
 	if (fd == -1)
+	{
+		perror("open");
 		return (0);
-	readed = read(fd, buff, letters);
-	write(STDOUT_FILENO, buff, readed);
-	free(buff);
+	}
+
+	buffer = malloc(sizeof(char) * letters);
+	if (buffer == NULL)
+	{
+		perror("malloc");
+		close(fd);
+		return (0);
+	}
+
+	/* Read from file */
+	n_read = read(fd, buffer, letters);
+	if (n_read == -1)
+	{
+		perror("read");
+		free(buffer);
+		close(fd);
+		return (0);
+	}
+
+	n_written = write(STDOUT_FILENO, buffer, n_read);
+	if (n_written == -1)
+	{
+		perror("write");
+		free(buffer);
+		close(fd);
+		return (0);
+	}
+
+	free(buffer);
 	close(fd);
-	return (readed);
+	return (n_read);
 }
